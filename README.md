@@ -4,4 +4,4 @@ Proyecto realizado en el Colegio San José de Marcos Paz con los estudiantes de 
 
 ## Acceso a la revista
 
-[https://revistacientifica-2021-san-jose.netlify.app/](Página Web del Proyecto)
+[Página Web del Proyecto](https://revistacientifica-2021-san-jose.netlify.app/)
