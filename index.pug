@@ -1,0 +1,52 @@
+mixin articulo(curso,grupo,titulo,integrantes,tienePoster)
+	- var poster = `${curso}/grupo-${grupo}/poster.jpg`
+	- var posterGrande = `${curso}/grupo-${grupo}/poster-g.jpg`
+	- var informe = `${curso}/grupo-${grupo}/informe.pdf`
+	article
+		.informacion
+			h3.titulo= titulo
+			h4.integrantes: small= integrantes
+			if tienePoster != 'no'
+				img(class="poster",src=poster, alt=`poster científico`)
+			p.informe
+				a(href=informe) Artículo Científico
+			if tienePoster != 'no'
+				p.poster
+					a(href=posterGrande) Poster Científico
+
+<!DOCTYPE html>
+html(lang="es")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title Sentidos que perciben y un cerebro que puede ser engañado	
+		link(rel="stylesheet", href="style.css")
+	body
+
+		.presentacion
+			.texto
+				h1 Revista Científico Digital	2021		
+				h2 Colegio San José de Marcos Paz
+				p Los alumnos de 4to del Colegio San José de Marcos Paz nos invitan a "desconfiar" de nuestro cerebro.
+				p Mediante una investigación, realizada a lo largo de todo el ciclo lectivo 2021, los estudiantes cuestionaron la percepción de la realidad y la construcción que genera nuestra mente.  
+				p Agradecemos al Centro Cultural de la Ciencia (C3) por recibirnos en el Laboratorio de Percepción (semilla del proyecto) y acompañar el desarrollo de los estudiantes.
+			figure
+				img(src="escudo.png", alt="Escudo del Colegio San José de Marcos Paz")
+		
+
+		.trabajos
+			+articulo('4a',1,'Tiempo real y tiempo percibido','Argañaraz, L; Cura, M; Quidiello, V; Schiaffi, E')
+			+articulo('4a',2,'Percepción visual','Wassinger, A; Galeano, L; Hernández, A; Sayago, N')
+			+articulo('4a',3,'Pareidolia','Gonzalez Sandoval, DI; Oviedo, L; Vargas, MC')
+			+articulo('4a',4,'Efecto Mandela', 'Caballero, CL; Coria, M; Sole, C')
+			+articulo('4b',7,'Efecto McGurk', 'Ithurria, C; Rojas, A; Santucho, C; Videtto, C')
+			+articulo('4a',5,'La comida, la memoria, los olores y el gusto','Devoto, TA; Giusso, MF; Mora, TB')
+			+articulo('4a',6,'Deja vu', 'Ruiz, A; Butiler, M')
+			+articulo('4b',9, 'Ilusiones ópticas', 'Martínez, AR')
+			+articulo('4b',1,'Tiempo de sueño', 'Guerra, M; Sosa, C; Raffinetti Tempone, F')
+			+articulo('4b',2,'Daltonismo','Lasala, L; Lasala, S; Mesa, C; Pirozzo, J')
+			+articulo('4b',3,'Enfermedades de la visión','Olgiati, S; Parravicini, S; Maiza, B; Ricardo Arias, P')
+			+articulo('4b',6,'Percepción de los colores', 'Arregui, J; Ormachea, F; Reyes, M; Ramírez, G')
+			+articulo('4b',4,'Dislexia', 'Lannelongue, D; Rinaldini, M; Rodriguez, E')
+			+articulo('4b',8,'Hipoacusia', 'Heredia, G; Mercau, V')
+			+articulo('4b',5,'La perspectiva de la flotabilidad', 'Codega, N; Garceron, M; Bravo, G')

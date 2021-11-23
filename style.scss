@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&family=Oswald:wght@400;700&display=swap");
+$fuente-0: "Oswald", sans-serif;
+$fuente-1: "Ubuntu", sans-serif;
+
+body {
+  background-color: black;
+  color: whitesmoke;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: $fuente-1;
+
+  h3 {
+    font-family: $fuente-0;
+    text-transform: uppercase;
+  }
+}
+
+.trabajos {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  animation-name: inicioTrabajos;
+  animation-duration: 2s;
+}
+@keyframes inicioTrabajos {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+article * {
+  margin: 5px;
+}
+
+article {
+  img {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    filter: grayscale(90%);
+    border-radius: 4px;
+    transition: 0.4s;
+  }
+  &:hover {
+    img {
+      transform: scale(1.05);
+      filter: grayscale(0%);
+    }
+    .titulo {
+      color: #f7c301;
+    }
+  }
+}
+p.poster a,
+p.informe a {
+  text-decoration: none;
+  display: block;
+  color: white;
+  border: 1px solid white;
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+  transition: 0.3s;
+}
+p.poster a:hover,
+p.informe a:hover {
+  transform: scale(1.05);
+  color: #f7c301;
+}
+
+.presentacion {
+  display: flex;
+  justify-content: space-evenly;
+  animation: inicio 1s;
+  .texto {
+    text-align: justify;
+    width: 65%;
+  }
+  h1,
+  h2 {
+    text-align: center;
+  }
+  figure {
+    margin: auto auto;
+  }
+  img {
+    width: 100%;
+  }
+}
+
+@keyframes inicio {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 799px) {
+  .trabajos {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 599px) {
+  .trabajos {
+    grid-template-columns: 1fr;
+  }
+  .presentacion {
+    display: inherit;
+    .texto {
+      width: inherit;
+      padding: 5vw;
+    }
+    figure {
+      width: 80px;
+    }
+  }
+  .poster {
+    margin: 20px auto;
+  }
+}
